@@ -148,12 +148,14 @@ au BufNewFile,BufRead *
 \ set shiftwidth=4 |
 \ set expandtab |
 \ set autoindent |
-\ set fileformat=unix |
 \ set list listchars=tab:>-
 au BufNewFile,BufRead *.c,*.py
 \ set colorcolumn=80
 au BufNewFile,BufRead *.go
 \ set nolist
+
+" fix error when run h: help
+au BufRead,BufNewFile * if &l:modifiable | setlocal fileformat=unix | endif
 
 "python with virtualenv support
 py << EOF
