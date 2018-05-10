@@ -271,6 +271,8 @@ vnoremap <S-Tab> <gv
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+"Map ; to : and save a million keystrokes
+nnoremap ; :
 
 " override with your local vimrc
 so ~/.vimrc.local
